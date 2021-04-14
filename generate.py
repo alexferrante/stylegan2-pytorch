@@ -62,11 +62,20 @@ if __name__ == "__main__":
         default=2,
         help="channel multiplier of the generator. config-f = 2, else = 1",
     )
+    parser.add_argument(
+        "--n_mlp",
+        type=int,
+        default=2,
+        help="number of mapping layers",
+    )
+    parser.add_argument(
+        "--latent",
+        type=int,
+        default=512,
+        help="dimensionality of mapping layer",
+    )
 
     args = parser.parse_args()
-
-    args.latent = 512
-    args.n_mlp = 8
 
     g_ema = Generator(
         args.size, args.latent, args.n_mlp, channel_multiplier=args.channel_multiplier

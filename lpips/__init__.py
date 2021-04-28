@@ -28,7 +28,6 @@ class PerceptualLoss(torch.nn.Module):
         Pred and target are Variables.
         If normalize is True, assumes the images are between [0,1] and then scales them between [-1,+1]
         If normalize is False, assumes the images are already between [-1,+1]
-
         Inputs pred and target are Nx3xHxW
         Output pytorch Variable N long
         """

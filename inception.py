@@ -35,7 +35,6 @@ class InceptionV3(nn.Module):
                  requires_grad=False,
                  use_fid_inception=True):
         """Build pretrained InceptionV3
-
         Parameters
         ----------
         output_blocks : list of int
@@ -128,13 +127,11 @@ class InceptionV3(nn.Module):
 
     def forward(self, inp):
         """Get Inception feature maps
-
         Parameters
         ----------
         inp : torch.autograd.Variable
             Input tensor of shape Bx3xHxW. Values are expected to be in
             range (0, 1)
-
         Returns
         -------
         List of torch.autograd.Variable, corresponding to the selected output
@@ -165,10 +162,8 @@ class InceptionV3(nn.Module):
 
 def fid_inception_v3():
     """Build pretrained Inception model for FID computation
-
     The Inception model for FID computation uses a different set of weights
     and has a slightly different structure than torchvision's Inception.
-
     This method first constructs torchvision's Inception and then patches the
     necessary parts that are different in the FID Inception model.
     """
